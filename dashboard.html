@@ -337,6 +337,7 @@
     <div class="schedule">
       <h2>Jadwal Hari Ini</h2>
       <p id="jadwal">Memuat jadwal...</p>
+      <div id="next-class">memuat kelas...</div>
       <p id="current-time">Memuat waktu...</p>
     </div>
 
@@ -347,47 +348,47 @@
         <div class="card">
           <img src="https://via.placeholder.com/150" alt="Nur Salman S.Kom., MT">
           <h3>Nur Salman S.Kom., MT</h3>
-          <p>NIP: 00</p>
+          <p>NIP: 001</p>
         </div>
         <div class="card">
           <img src="https://via.placeholder.com/150" alt="Risnayanti A Djamro SE., MM">
           <h3>Risnayanti A Djamro SE., MM</h3>
-          <p>NIP: 00</p>
+          <p>NIP: 002</p>
         </div>
         <div class="card">
           <img src="https://via.placeholder.com/150" alt="Arham Arifin S.KOM., MT">
           <h3>Arham Arifin S.KOM., MT</h3>
-          <p>NIP: 00</p>
+          <p>NIP: 003</p>
         </div>
         <div class="card">
           <img src="https://via.placeholder.com/150" alt="Dr. Ahmad ST., MT">
           <h3>Dr. Ahmad ST., MT</h3>
-          <p>NIP: 00</p>
+          <p>NIP: 004</p>
         </div>
         <div class="card">
           <img src="https://via.placeholder.com/150" alt="Kasmawaru S.Sos., M.Kom">
           <h3>Kasmawaru S.Sos., M.Kom</h3>
-          <p>NIP: 00</p>
+          <p>NIP: 005</p>
         </div>
         <div class="card">
           <img src="https://via.placeholder.com/150" alt="Amirah ST., MT">
           <h3>Amirah ST., MT</h3>
-          <p>NIP: 00</p>
+          <p>NIP: 006</p>
         </div>
         <div class="card">
           <img src="https://via.placeholder.com/150" alt="Rudy Donny Liklilwatil SE., M.Kom">
           <h3>Rudy Donny Liklilwatil SE., M.Kom</h3>
-          <p>NIP: 00</p>
+          <p>NIP: 007</p>
         </div>
         <div class="card">
           <img src="https://via.placeholder.com/150" alt="Sriwahyuningsih Piu S.SI., MT">
           <h3>Sriwahyuningsih Piu S.SI., MT</h3>
-          <p>NIP: 00</p>
+          <p>NIP: 008</p>
         </div>
         <div class="card">
           <img src="https://via.placeholder.com/150" alt="Fadel Muslaini S.Pd., M.Pd.">
           <h3>Fadel Muslaini S.Pd., M.Pd.</h3>
-          <p>NIP: 00</p>
+          <p>NIP: 009</p>
         </div>
       </div>
     </div>
@@ -535,77 +536,88 @@
   </div>
 
   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.navbar ul');
+   const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.navbar ul');
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active'); // Mengaktifkan dan menonaktifkan kelas aktif
-    });
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Mengaktifkan dan menonaktifkan kelas aktif
+});
 
-    // Data jadwal mingguan
-    const jadwalMingguan = {
-      'Minggu': [],
-      'Senin': [],
-      'Selasa': [
+// Data jadwal mingguan
+const jadwalMingguan = {
+    'Minggu': [],
+    'Senin': [],
+    'Selasa': [
         { start: '07:30', end: '09:10', subject: 'Algoritma dan Pemrograman C++', room: '101', dosen: 'Nur Salman S.Kom., MT.' },
         { start: '09:20', end: '11:00', subject: 'Pengembangan Diri', room: '103', dosen: 'Risnayanti A Djamro SE., MM' },
         { start: '11:10', end: '12:50', subject: 'Organisasi dan Arsitektur Komputer', room: '102', dosen: 'Arham Arifin S.Kom., MT' }
-      ],
-      'Rabu': [
+    ],
+    'Rabu': [
         { start: '07:30', end: '09:10', subject: 'Algoritma dan Pemrograman C++', room: '103', dosen: 'Nur Salman S.Kom., MT.' },
         { start: '09:20', end: '11:00', subject: 'Elektronika Analog', room: '109', dosen: 'Dr. Ahmad ST., MT' }
-      ],
-      'Kamis': [
+    ],
+    'Kamis': [
         { start: '07:30', end: '09:10', subject: 'Pengenalan Teknologi Informasi', room: 'B112', dosen: 'Kasmawaru S.Sos.,M.Kom' },
         { start: '09:20', end: '11:00', subject: 'Kewirausahaan/Technopreneurship', room: '110', dosen: 'Risnayanti A Djamro SE., MM' },
         { start: '11:10', end: '12:50', subject: 'Prak. Elektronika Analog', room: '308', dosen: 'Amirah ST.,MT' },
         { start: '15:40', end: '17:20', subject: 'Prak. Algoritma dan Pemrograman', room: '305', dosen: 'Rudy Donny Liklilwatil SE.,M.Kom' }
-      ],
-      'Jumat': [
+    ],
+    'Jumat': [
         { start: '07:30', end: '09:10', subject: 'Prak. Algoritma dan Pemrograman', room: '305', dosen: 'Rudy Donny Liklilwatil SE.,M.Kom' },
         { start: '09:20', end: '11:00', subject: 'Kalkulus', room: '111', dosen: 'Sriwahyuningsih Piu S.SI.,MT' },
         { start: '13:40', end: '15:20', subject: 'Bahasa Inggris 1', room: '102', dosen: 'Fadel Muslaini S.Pd.,M.Pd' }
-      ],
-      'Sabtu': [],
-      'Minggu': [] // Tidak ada jadwal
-    };
+    ],
+    'Sabtu': [],
+    'Minggu': [] // Tidak ada jadwal
+};
 
-    function updateJadwal() {
-      const jadwalElement = document.getElementById('jadwal');
-      const timeElement = document.getElementById('current-time');
-      const now = new Date();
+function updateJadwal() {
+    const jadwalElement = document.getElementById('jadwal');
+    const timeElement = document.getElementById('current-time');
+    const nextClassElement = document.getElementById('next-class');
+    const now = new Date();
 
-      const dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-      const currentDay = dayNames[now.getDay()]; // Hari saat ini
+    const dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const currentDay = dayNames[now.getDay()]; // Hari saat ini
 
-      const currentTime = now.toTimeString().split(' ')[0].slice(0, 5); // Waktu saat ini (hh:mm)
-      timeElement.textContent = `Waktu sekarang: ${currentTime}`;
+    const currentTime = now.toTimeString().split(' ')[0].slice(0, 5); // Waktu saat ini (hh:mm)
+    timeElement.textContent = `Waktu sekarang: ${currentTime}`;
 
-      // Ambil jadwal untuk hari ini
-      const jadwalHariIni = jadwalMingguan[currentDay];
+    // Ambil jadwal untuk hari ini
+    const jadwalHariIni = jadwalMingguan[currentDay];
 
-      if (jadwalHariIni.length > 0) {
-        // Waktu 2 jam sebelum sekarang
+    if (jadwalHariIni.length > 0) {
         const twoHoursBefore = new Date(now.getTime() - 2 * 60 * 60 * 1000);
         const twoHoursBeforeTime = twoHoursBefore.toTimeString().split(' ')[0].slice(0, 5);
 
-        // Cari jadwal yang sedang berlangsung atau yang akan datang
-        const jadwalAktif = jadwalHariIni.find(jadwal => jadwal.start <= twoHoursBeforeTime && jadwal.end >= twoHoursBeforeTime) ||
-          jadwalHariIni.find(jadwal => jadwal.start > twoHoursBeforeTime);
+        // Cari jadwal yang sedang berlangsung
+        const jadwalAktif = jadwalHariIni.find(jadwal => jadwal.start <= currentTime && jadwal.end >= currentTime);
+        
+        // Cari kelas selanjutnya
+        const kelasSelanjutnya = jadwalHariIni.find(jadwal => jadwal.start > currentTime);
 
         if (jadwalAktif) {
-          jadwalElement.textContent = `${jadwalAktif.subject}: ${jadwalAktif.start} - ${jadwalAktif.end} diruangan ${jadwalAktif.room}, Dosen: ${jadwalAktif.dosen}`;
+            jadwalElement.textContent = `${jadwalAktif.subject}: ${jadwalAktif.start} - ${jadwalAktif.end} diruangan ${jadwalAktif.room}, Dosen: ${jadwalAktif.dosen}`;
         } else {
-          jadwalElement.textContent = 'Tidak ada kelas sekarang. Jadwal telah selesai untuk hari ini.';
+            jadwalElement.textContent = 'Tidak ada kelas sekarang. Jadwal telah selesai untuk hari ini.';
         }
-      } else {
-        jadwalElement.textContent = 'Tidak ada jadwal untuk hari ini.';
-      }
-    }
 
-    // Update jadwal setiap detik
-    setInterval(updateJadwal, 1000); // Update every second
-    updateJadwal(); // Initial load
+        // Tampilkan kelas selanjutnya
+        if (kelasSelanjutnya) {
+            nextClassElement.textContent = `Matakuliah selanjutnya adalah ${kelasSelanjutnya.subject} pada ${kelasSelanjutnya.start} di ruangan ${kelasSelanjutnya.room}, Dosen: ${kelasSelanjutnya.dosen}`;
+        } else {
+            nextClassElement.textContent = 'Dan tidak ada kelas selanjutnya untuk hari ini.';
+        }
+    } else {
+        jadwalElement.textContent = 'Tidak ada jadwal untuk hari ini.';
+        nextClassElement.textContent = '';
+    }
+}
+
+// Update jadwal setiap detik
+setInterval(updateJadwal, 1000); // Update every second
+updateJadwal(); // Initial load
+
 
   </script>
 
