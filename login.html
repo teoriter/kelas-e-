@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Website Class E</title>
+   <link rel="stylesheet" href="./style/login.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login to Class E</h2>
+    <form id="loginForm">
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+        <div id="errorMessage" class="error-message"></div>
+    </form>
+</div>
+
+<script>
+    const _0x53d2=['\x45'];(function(_0x4c5f22,_0x53d2c1){const _0x22838b=function(_0x4486e6){while(--_0x4486e6){_0x4c5f22['push'](_0x4c5f22['shift']());}};_0x22838b(++_0x53d2c1);}(_0x53d2,0x1d7));const _0x2283=function(_0x4c5f22,_0x53d2c1){_0x4c5f22=_0x4c5f22-0x0;let _0x22838b=_0x53d2[_0x4c5f22];return _0x22838b;};const correctPasswordHex=_0x2283('0x0');
+    function hexToString(hex) {
+        return hex.replace(/\\x([0-9A-Fa-f]{2})/g, function(match, p1) {
+            return String.fromCharCode(parseInt(p1, 16));
+        });
+    }
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const passwordInput = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
+        const correctPassword = hexToString(correctPasswordHex);
+        const inputPassword = passwordInput;
+        if (inputPassword === correctPassword) {
+            window.location.href = 'dashboard.html';
+        } else {
+            errorMessage.textContent = 'Password salah, silakan coba lagi.';
+        }
+    });
+</script>
+
+</body>
+</html>
