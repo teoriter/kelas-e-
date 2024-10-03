@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>algoritma dan pemrograman</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c, #1a1a1a);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .pertemuan-selector {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .pertemuan-selector select {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .materi-content {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+        .materi-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .tugas {
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: #000;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .tugas h3 {
+            margin-top: 0;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Materi Algoritma dan Pemrograman</h1>
+        
+        <div class="pertemuan-selector">
+            <select id="pertemuan" onchange="changePertemuan()">
+                <option value="4">Pertemuan 4</option>
+                <option value="5">Pertemuan 5</option>
+                <option value="6">Pertemuan 6</option>
+            </select>
+        </div>
+
+        <div id="materi-content" class="materi-content">
+            <!-- Konten materi akan diisi di sini -->
+        </div>
+    </div>
+
+    <script>
+        function changePertemuan() {
+    const pertemuan = document.getElementById('pertemuan').value;
+    const content = document.getElementById('materi-content');
+
+    // Contoh konten untuk setiap pertemuan
+    const materiContent = {
+    4: `
+        <h2>Pertemuan 1: Dasar-dasar Pemrograman</h2>
+        <p>Pada pertemuan ini, kita akan mempelajari beberapa tipe data dasar yang sering digunakan dalam pemrograman, yaitu <strong>int</strong>, <strong>char</strong>, <strong>float/double</strong>, <strong>boolean</strong>, dan <strong>String</strong>.</p>
+         <img src="../assets/image/img-materi/Materi 4 - algo/foto-materi-1-algo.jpg" alt="Dasar Pemrograman" class="materi-image">
+        <h3>Penjelasan Tipe Data:</h3>
+        <ul>
+            <li><strong>Integer (int):</strong> 
+                <p>Tipe data <code>int</code> digunakan untuk menyimpan angka bulat, yaitu angka yang tidak memiliki nilai desimal, seperti 1, 42, -5, atau 0. Angka bulat sering digunakan dalam operasi perhitungan dasar seperti penjumlahan, pengurangan, dan sebagainya. Batas dari tipe data <code>int</code> adalah dari -2,147,483,648 hingga 2,147,483,647.</p>
+                <p><strong>Contoh Penggunaan:</strong></p>
+                <code>
+                int umur = 25;<br>
+                int jumlahSiswa = 30;<br>
+                int suhuUdara = -10;
+                </code>
+                <p>Pada contoh di atas, variabel <code>umur</code> menyimpan nilai 25, <code>jumlahSiswa</code> menyimpan nilai 30, dan <code>suhuUdara</code> menyimpan nilai -10.</p>
+            </li>
+            <li><strong>Character (char):</strong> 
+                <p>Tipe data <code>char</code> digunakan untuk menyimpan satu karakter saja, seperti huruf (A-Z, a-z), angka (0-9), atau simbol khusus seperti <code>@</code>, <code>#</code>, <code>$</code>. Setiap karakter ditulis di antara tanda kutip tunggal (' ').</p>
+                <p><strong>Contoh Penggunaan:</strong></p>
+                <code>
+                char inisial = 'R';<br>
+                char angkaSebagaiChar = '7';<br>
+                char simbol = '$';
+                </code>
+                <p>Pada contoh ini, variabel <code>inisial</code> menyimpan huruf 'R', <code>angkaSebagaiChar</code> menyimpan karakter '7', dan <code>simbol</code> menyimpan simbol '$'.</p>
+            </li>
+            <li><strong>Float/Double:</strong> 
+                <p>Tipe data <code>float</code> dan <code>double</code> digunakan untuk menyimpan angka dengan nilai desimal. <code>float</code> memiliki presisi yang lebih rendah dibandingkan <code>double</code>, sehingga <code>double</code> sering digunakan jika kita membutuhkan lebih banyak angka di belakang koma.</p>
+                <p><strong>Contoh Penggunaan:</strong></p>
+                <code>
+                float beratBadan = 65.5f;<br>
+                double pi = 3.14159265359;<br>
+                double suhuAir = -0.5;
+                </code>
+                <p>Pada contoh ini, <code>beratBadan</code> menyimpan nilai 65.5, <code>pi</code> menyimpan nilai Pi dengan presisi tinggi, dan <code>suhuAir</code> menyimpan nilai -0.5 derajat.</p>
+            </li>
+            <li><strong>Boolean (boolean):</strong> 
+                <p>Tipe data <code>boolean</code> hanya memiliki dua nilai, yaitu <code>true</code> (benar) atau <code>false</code> (salah). Tipe data ini sering digunakan dalam kondisi atau keputusan logika, misalnya untuk memeriksa apakah suatu kondisi terpenuhi atau tidak.</p>
+                <p><strong>Contoh Penggunaan:</strong></p>
+                <code>
+                boolean isStudent = true;<br>
+                boolean hasGraduated = false;
+                </code>
+                <p>Dalam contoh ini, variabel <code>isStudent</code> menyimpan nilai <code>true</code>, yang berarti seseorang adalah siswa, dan <code>hasGraduated</code> menyimpan nilai <code>false</code>, menunjukkan bahwa seseorang belum lulus.</p>
+            </li>
+            <li><strong>String (String):</strong> 
+                <p>Tipe data <code>String</code> digunakan untuk menyimpan teks atau kumpulan karakter. Berbeda dengan <code>char</code> yang hanya menyimpan satu karakter, <code>String</code> bisa menyimpan banyak karakter sekaligus, misalnya kalimat atau nama lengkap. String ditulis dengan tanda kutip ganda (" ").</p>
+                <p><strong>Contoh Penggunaan:</strong></p>
+                <code>
+                String nama = "Rahmi";<br>
+                String alamat = "Jl. Merdeka No. 1";<br>
+                String pesan = "Selamat datang di kelas pemrograman!";
+                </code>
+                <p>Pada contoh ini, <code>nama</code> menyimpan teks "Rahmi", <code>alamat</code> menyimpan "Jl. Merdeka No. 1", dan <code>pesan</code> menyimpan "Selamat datang di kelas pemrograman!"</p>
+            </li>
+        </ul>
+        <ul>
+        <h2>FOTO MATERI</h2> 
+           <img src="../assets/image/img-materi/Materi 4 - algo/foto-materi-1-algo.jpg" alt="Dasar Pemrograman" class="materi-image">
+           <img src="../assets/image/img-materi/Materi 4 - algo/foto-materi-2-algo.jpg" alt="Dasar Pemrograman" class="materi-image">
+           <img src="../assets/image/img-materi/Materi 4 - algo/foto-materi-3-algo.jpg" alt="Dasar Pemrograman" class="materi-image">
+           </ul>
+        <div class="tugas">
+            <h3>Tugas:</h3>
+            <p>TIDAK ADA TUGAS</p>
+        </div>
+    `,
+    5: `
+        <h2>Pertemuan 2: Algoritma dan Struktur</h2>
+        <p>Pada pertemuan ini, kita akan mempelajari konsep algoritma, struktur algoritma, dan bagaimana menulis algoritma menggunakan <strong>pseudo code</strong>.</p>
+        
+        <h3>1. Apa Itu Algoritma?</h3>
+        <p>Algoritma adalah serangkaian langkah-langkah yang sistematis dan logis untuk menyelesaikan suatu masalah. Algoritma membantu kita menguraikan suatu masalah menjadi bagian-bagian kecil yang lebih mudah dipahami dan diselesaikan. Dalam pemrograman, algoritma digunakan untuk menyusun logika program agar masalah dapat diselesaikan secara efisien.</p>
+        
+        <h3>2. Struktur Algoritma</h3>
+        <p>Sebuah algoritma umumnya memiliki tiga bagian utama:</p>
+        <ul>
+            <li><strong>Deklarasi:</strong> Bagian ini berisi penjelasan atau pernyataan tentang hal-hal apa saja yang dibutuhkan dalam algoritma. Di bagian ini, kita juga mendefinisikan variabel, tipe data, atau kondisi awal.</li>
+            <li><strong>Deskripsi:</strong> Bagian ini adalah penjelasan dari langkah-langkah algoritma secara rinci. Setiap langkah-langkah diuraikan sehingga kita dapat mengikuti alurnya dengan mudah.</li>
+            <li><strong>Output:</strong> Bagian akhir yang berisi hasil atau kesimpulan dari algoritma setelah semua langkah dilaksanakan.</li>
+        </ul>
+
+         <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-2-parag=2.jpg" alt="Dasar Pemrograman" class="materi-image">
+        
+        <h3>3. Pseudo Code</h3>
+        <p>Pseudo code adalah cara menulis algoritma menggunakan bahasa yang mendekati bahasa manusia, tetapi memiliki struktur yang menyerupai kode pemrograman. Pseudo code digunakan untuk mendeskripsikan algoritma sebelum dituliskan dalam bahasa pemrograman sesungguhnya. Pseudo code mudah dipahami karena tidak tergantung pada sintaks bahasa pemrograman tertentu.</p>
+
+        <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-2-parag=2.jpg" alt="Dasar Pemrograman" class="materi-image">
+        <h4>Contoh Algoritma: Menghitung Luas Persegi Panjang</h4>
+        
+        <h5>a. Deklarasi dan Deskripsi Algoritma</h5>
+        <p>
+            Deklarasi: Tentukan panjang dan lebar persegi panjang.<br>
+            Deskripsi: Untuk menghitung luas persegi panjang, langkah-langkahnya adalah sebagai berikut:<br>
+            1. Baca nilai panjang.<br>
+            2. Baca nilai lebar.<br>
+            3. Hitung luas dengan rumus panjang x lebar.<br>
+            4. Tampilkan hasil luas.<br>
+        </p>
+
+        <h5>b. Pseudo Code</h5>
+        <p>Pseudo code dari algoritma di atas adalah sebagai berikut:</p>
+        <pre>
+        ALGORITMA <br> MenghitungLuasPersegiPanjang
+        Deklarasi:
+            panjang : float
+            lebar   : float
+            luas    : float
+        Deskripsi:
+            Baca(panjang)
+            Baca(lebar)
+            luas ← panjang * lebar
+            Tulis("Luas persegi <br>panjang adalah: ", luas)
+        </pre>
+
+        <h5>c. Penjelasan Pseudo Code</h5>
+        <p>Pada contoh di atas:</p>
+        <ul>
+            <li><code>ALGORITMA MenghitungLuasPersegiPanjang</code> merupakan nama algoritma yang akan kita kerjakan.</li>
+            <li>Bagian <code>Deklarasi</code> digunakan untuk mendefinisikan variabel yang kita butuhkan, yaitu <code>panjang</code>, <code>lebar</code>, dan <code>luas</code>, semua tipe datanya adalah <code>float</code> (bilangan desimal).</li>
+            <li>Bagian <code>Deskripsi</code> adalah langkah-langkah dari algoritma yang dijabarkan secara urut. Pertama, kita akan membaca nilai panjang dan lebar dari input pengguna, lalu menghitung luas dengan rumus panjang x lebar, dan terakhir menampilkan hasil perhitungan luas.</li>
+        </ul>
+        
+        <h5>d. Input dan Output dalam Pseudo Code</h5>
+        <p>
+            Dalam pseudo code, <strong>input</strong> biasanya menggunakan perintah <code>Baca</code>, sementara <strong>output</strong> menggunakan perintah <code>Tulis</code>. Misalnya:
+        </p>
+        <ul>
+            <li><code>Baca(panjang)</code>: Digunakan untuk menerima input dari pengguna (nilai panjang).</li>
+            <li><code>Baca(lebar)</code>: Digunakan untuk menerima input dari pengguna (nilai lebar).</li>
+            <li><code>Tulis("Luas persegi panjang adalah: ", luas)</code>: Digunakan untuk menampilkan hasil (output) luas persegi panjang yang dihitung.</li>
+        </ul>
+
+        <h5>e. Contoh Penggunaan Algoritma dalam Kehidupan Nyata</h5>
+        <p>Algoritma tidak hanya digunakan dalam pemrograman, tetapi juga dalam kehidupan sehari-hari. Misalnya, algoritma bisa digunakan untuk merencanakan perjalanan, memasak resep, atau bahkan menyelesaikan tugas rumah tangga. Berikut adalah contoh algoritma sederhana untuk memasak nasi:</p>
+        <pre>
+        ALGORITMA MemasakNasi
+        Deklarasi:
+            beras : kilogram
+            air : liter
+        Deskripsi:
+            Baca(beras)
+            Baca(air)
+            Masukkan beras ke dalam panci
+            Tambahkan air
+            Masak hingga matang
+            Tulis("Nasi sudah matang")
+        </pre>
+        
+        <h3>4. Apa Itu Operator?</h3>
+        <p><strong>Operator</strong> dalam pemrograman adalah simbol yang digunakan untuk melakukan operasi pada satu atau lebih variabel atau nilai (operand). Operator sangat penting karena memungkinkan kita untuk melakukan berbagai jenis perhitungan dan manipulasi data.</p>
+
+        <h4>Kategori Operator</h4>
+        <ul>
+            <li><strong>Operator Aritmatika:</strong> Digunakan untuk melakukan operasi matematika seperti penjumlahan, pengurangan, perkalian, dan pembagian.</li>
+            <ul>
+                <li><code>+</code> : Penjumlahan (contoh: <code>c = a + b;</code>)</li>
+                <li><code>-</code> : Pengurangan (contoh: <code>c = a - b;</code>)</li>
+                <li><code>*</code> : Perkalian (contoh: <code>c = a * b;</code>)</li>
+                <li><code>/</code> : Pembagian (contoh: <code>c = a / b;</code>)</li>
+                <li><code>%</code> : Modulus (menghasilkan sisa bagi, contoh: <code>c = a % b;</code>)</li>
+            </ul>
+            <li><strong>Operator Perbandingan:</strong> Digunakan untuk membandingkan dua nilai atau variabel. Hasil dari operator perbandingan biasanya bernilai <code>true</code> atau <code>false</code>.
+            </li>
+            <ul>
+                <li><code>==</code> : Sama dengan (contoh: <code>a == b</code>)</li>
+                <li><code>!=</code> : Tidak sama dengan (contoh: <code>a != b</code>)</li>
+                <li><code>></code> : Lebih besar dari (contoh: <code>a > b</code>)</li>
+                <li><code><</code> : Lebih kecil dari (contoh: <code>a < b</code>)</li>
+                <li><code>>=</code> : Lebih besar atau sama dengan (contoh: <code>a >= b</code>)</li>
+                <li><code><=</code> : Lebih kecil atau sama dengan (contoh: <code>a <= b</code>)</li>
+            </ul>
+            <li><strong>Operator Logika:</strong> Digunakan untuk mengkombinasikan dua ekspresi logika dan menghasilkan nilai <code>true</code> atau <code>false</code>.
+            </li>
+            <ul>
+                <li><code>&&</code> : Logika AND (contoh: <code>a && b</code>, bernilai <code>true</code> jika kedua operand bernilai <code>true</code>)</li>
+                <li><code>||</code> : Logika OR (contoh: <code>a || b</code>, bernilai <code>true</code> jika salah satu operand bernilai <code>true</code>)</li>
+                <li><code>!</code> : Logika NOT (contoh: <code>!a</code>, membalik nilai operand, dari <code>true</code> menjadi <code>false</code>)</li>
+            </ul>
+        </ul>
+
+        <h4>Contoh Penggunaan Operator dalam Program</h4>
+        <p>Berikut adalah contoh program C++ yang menggunakan operator untuk menghitung luas persegi panjang:</p>
+
+        <pre>
+        #include &lt;iostream&gt;
+        using namespace std;
+
+        int main() {
+            float panjang, lebar, luas;
+
+            // Input dari pengguna
+            cout << "Masukkan panjang <br> persegi panjang: ";
+            cin >> panjang;
+            cout << "Masukkan lebar <br> persegi panjang: ";
+            cin >> lebar;
+
+            // Menghitung luas
+            luas = panjang * lebar;
+
+            // Menampilkan hasil luas
+            cout << "Luas persegi panjang <br> adalah: " << luas << endl;
+
+            return 0;
+        }
+        </pre>
+
+        <ul>
+           <h2>FOTO MATERI</h2> 
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-3.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-4.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-5.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-6.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-7.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-8.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-9.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-10.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-11.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-12.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-13.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-14.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 5 - algo/foto-materi-15.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+          </ul>
+
+        <div class="tugas">
+            <h3>Tugas:</h3>
+            <p>TIDAK ADA TUGAS</p>
+        </div>
+    `,
+    6: `
+        <h2>Pertemuan 3: Program dan Struktur Program C++</h2>
+        <p>Pada pertemuan ini, kita akan membahas tentang <strong>program</strong> dalam bahasa C++, bagaimana cara <strong>kompilasi program</strong>, <strong>struktur program</strong>, serta <strong>keyword</strong>, <strong>tipe data</strong>, dan <strong>operator</strong> yang digunakan dalam bahasa C++.</p>
+        
+        <h3>1. Apa Itu Program?</h3>
+        <p>Program adalah sekumpulan instruksi yang ditulis dalam bahasa pemrograman untuk melakukan tugas tertentu. Dalam bahasa C++, program terdiri dari satu atau lebih fungsi yang mengontrol alur eksekusi. Fungsi utama dalam C++ adalah fungsi <code>main()</code> yang merupakan titik awal eksekusi program.</p>
+        
+        <h3>2. Kompilasi Program C++</h3>
+        <p>Kompilasi adalah proses menerjemahkan kode sumber (source code) yang ditulis dalam bahasa C++ ke dalam bahasa mesin yang dapat dieksekusi oleh komputer. Berikut adalah langkah-langkah umum dalam proses kompilasi:</p>
+        <ol>
+            <li>Menulis kode sumber dalam file dengan ekstensi <code>.cpp</code>.</li>
+            <li>Menggunakan compiler (misalnya g++, clang) untuk mengkompilasi kode sumber menjadi file objek.</li>
+            <li>Linker menggabungkan file objek menjadi program yang dapat dijalankan.</li>
+        </ol>
+        <p>Contoh perintah untuk mengkompilasi program C++ menggunakan g++:</p>
+        <pre>
+        g++ -o nama_program nama_file.cpp
+        </pre>
+        
+        <h3>3. Struktur Program C++</h3>
+        <p>Struktur dasar program C++ terdiri dari beberapa komponen utama:</p>
+        <ul>
+            <li><strong>Preprocessor Directives:</strong> Perintah untuk compiler, contohnya <code>#include &lt;iostream&gt;</code> untuk menggunakan fungsi input/output standar.</li>
+            <li><strong>Fungsi Main:</strong> Fungsi utama yang menjadi titik awal eksekusi program. Biasanya dituliskan seperti ini:</li>
+            <pre>
+            int main() {
+                // Kode program
+                return 0;
+            }
+            </pre>
+            <li><strong>Kode Program:</strong> Instruksi yang akan dieksekusi, termasuk deklarasi variabel, pernyataan, dan fungsi lainnya.</li>
+        </ul>
+
+        <h3>4. Keyword dalam C++</h3>
+        <p><strong>Keyword</strong> adalah kata-kata yang telah ditentukan oleh bahasa pemrograman C++ dan memiliki makna khusus. Beberapa contoh keyword yang sering digunakan adalah:</p>
+        <ul>
+            <li><code>int</code>: Tipe data untuk bilangan bulat.</li>
+            <li><code>float</code>: Tipe data untuk bilangan pecahan.</li>
+            <li><code>if</code>: Pernyataan kondisi.</li>
+            <li><code>return</code>: Mengembalikan nilai dari fungsi.</li>
+        </ul>
+
+        <h3>5. Tipe Data dalam C++</h3>
+        <p>C++ menyediakan berbagai tipe data untuk menyimpan informasi, di antaranya:</p>
+        <ul>
+            <li><strong>Tipe Data Dasar:</strong> 
+                <ul>
+                    <li><code>int</code>: Bilangan bulat, misalnya <code>int a = 5;</code></li>
+                    <li><code>float</code>: Bilangan pecahan, misalnya <code>float b = 5.75;</code></li>
+                    <li><code>double</code>: Bilangan pecahan dengan presisi lebih tinggi, misalnya <code>double c = 10.123456;</code></li>
+                    <li><code>char</code>: Karakter, misalnya <code>char d = 'A';</code></li>
+                </ul>
+            </li>
+            <li><strong>Tipe Data Boolean:</strong> Menyimpan nilai <code>true</code> atau <code>false</code>. Misalnya, <code>bool isValid = true;</code></li>
+        </ul>
+
+        <h3>6. Operator dalam C++</h3>
+        <p><strong>Operator</strong> adalah simbol yang digunakan untuk melakukan operasi pada variabel atau nilai. C++ memiliki beberapa jenis operator, antara lain:</p>
+        <ul>
+            <li><strong>Operator Aritmatika:</strong> Melakukan operasi matematika, contohnya <code>+, -, *, /, %</code>.</li>
+            <li><strong>Operator Perbandingan:</strong> Membandingkan dua nilai, contohnya <code>==, !=, >, <, >=, <=</code>.</li>
+            <li><strong>Operator Logika:</strong> Digunakan untuk operasi logika, contohnya <code>&&, ||, !</code>.</li>
+        </ul>
+
+        <h3>7. Contoh Program C++</h3>
+        <p>Berikut adalah contoh program C++ yang mengimplementasikan semua konsep di atas:</p>
+        <pre>
+        #include &lt;iostream&gt;
+        using namespace std;
+
+        int main() {
+            // Deklarasi variabel
+            int panjang, lebar;
+            int luas;
+
+            // Input dari pengguna
+            cout << "Masukkan panjang <br>  persegi panjang: ";
+            cin >> panjang;
+            cout << "Masukkan lebar <br> persegi panjang: ";
+            cin >> lebar;
+
+            // Menghitung luas
+            luas = panjang * lebar;
+
+            // Menampilkan hasil luas
+            cout << "Luas persegi panjang <br> adalah: " << luas << endl;
+
+            return 0;
+        }
+        </pre>
+
+        <ul>
+           <h2>FOTO MATERI</h2> 
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-1.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-2.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-3.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-4.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-5.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-6.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-7.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-8.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-9.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+           <img src="../assets/image/img-materi/Materi 6 - algo/foto-materi-10.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 40%; height: auto;">
+         </ul>
+            <div class="tugas">
+                <h3>Tugas:</h3>
+                <p>TIDAK ADA TUGAS</p>
+            </div>
+        `
+    };
+
+    content.innerHTML = materiContent[pertemuan];
+}
+
+// Inisialisasi konten untuk pertemuan pertama
+changePertemuan();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elektronika analog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c, #1a1a1a);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .pertemuan-selector {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .pertemuan-selector select {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .materi-content {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+        .materi-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .tugas {
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: #000;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .tugas h3 {
+            margin-top: 0;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Materi Elektronika Analog</h1>
+        
+        <div class="pertemuan-selector">
+            <select id="pertemuan" onchange="changePertemuan()">
+                <option value="1">Pertemuan 1</option>
+                <option value="2">Pertemuan 2</option>
+                <!-- <option value="3">Pertemuan 3</option> -->
+            </select>
+        </div>
+
+        <div id="materi-content" class="materi-content">
+            <!-- Konten materi diisi di sini -->
+        </div>
+    </div>
+
+    <script>
+        function changePertemuan() {
+    const pertemuan = document.getElementById('pertemuan').value;
+    const content = document.getElementById('materi-content');
+
+    // Contoh konten untuk setiap pertemuan
+    const materiContent = {
+    1:  `
+        <h2>Materi Elektronika Analog</h2>
+        <p>Pada materi ini, kita akan membahas tentang arus, tegangan, tahanan, dan Hukum Kirchoff yang merupakan dasar dari elektronika analog.</p>
+        
+        <h3>1. Arus (I)</h3>
+        <p><strong>Arus</strong> adalah aliran muatan listrik dalam suatu rangkaian. Arus diukur dalam satuan Ampere (A).</p>
+        <p>Rumus untuk menghitung arus:</p>
+        <pre>
+        I = Q / t
+        </pre>
+        <p>di mana:</p>
+        <ul>
+            <li><code>I</code>: Arus (Ampere)</li>
+            <li><code>Q</code>: Muatan listrik (Coulomb)</li>
+            <li><code>t</code>: Waktu (detik)</li>
+        </ul>
+
+        <h3>2. Tegangan (V)</h3>
+        <p><strong>Tegangan</strong> adalah beda potensial antara dua titik dalam suatu rangkaian. Tegangan diukur dalam satuan Volt (V).</p>
+        <p>Rumus untuk menghitung tegangan:</p>
+        <pre>
+        V = I * R
+        </pre>
+        <p>di mana:</p>
+        <ul>
+            <li><code>V</code>: Tegangan (Volt)</li>
+            <li><code>I</code>: Arus (Ampere)</li>
+            <li><code>R</code>: Tahanan (Ohm)</li>
+        </ul>
+
+        <h3>3. Tahanan (R)</h3>
+        <p><strong>Tahanan</strong> adalah penghambat aliran arus listrik dalam rangkaian. Tahanan diukur dalam satuan Ohm (Ω).</p>
+        <p>Rumus untuk menghitung tahanan:</p>
+        <pre>
+        R = V / I
+        </pre>
+
+        <h3>4. Hukum Kirchoff</h3>
+        <p><strong>Hukum Kirchoff</strong> terdiri dari dua hukum dasar dalam analisis rangkaian:</p>
+        
+        <ul>
+            <li><strong>Hukum Kirchoff untuk Arus (KCL):</strong> Jumlah arus yang masuk ke dalam suatu titik (node) sama dengan jumlah arus yang keluar dari titik tersebut.</li>
+            <li><strong>Hukum Kirchoff untuk Tegangan (KVL):</strong> Jumlah total tegangan dalam suatu loop tertutup adalah nol.</li>
+        </ul>
+
+        <h3>5. Tabel Rangkaian</h3>
+        <p>Berikut adalah tabel rangkaian sederhana yang menunjukkan hubungan antara arus, tegangan, dan tahanan:</p>
+        <table border="1">
+            <tr>
+                <th>Rangkaian</th>
+                <th>Arus (I) [A]</th>
+                <th>Tegangan (V) [V]</th>
+                <th>Tahanan (R) [Ω]</th>
+            </tr>
+            <tr>
+                <td>R1</td>
+                <td>I1</td>
+                <td>V1</td>
+                <td>R1</td>
+            </tr>
+            <tr>
+                <td>R2</td>
+                <td>I2</td>
+                <td>V2</td>
+                <td>R2</td>
+            </tr>
+            <tr>
+                <td>R3</td>
+                <td>I3</td>
+                <td>V3</td>
+                <td>R3</td>
+            </tr>
+        </table>
+
+        <ul>
+           <h2>FOTO MATERI</h2>
+           <img src="../assets/image/img-materi/Materi 1 - elektronika/foto-materi.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 80%; height: auto;">
+        </ul>
+        <div class="tugas">
+            <h3>Tugas:</h3>
+            <p>Tuliskan 30 komponen elektronik, dalam tabel berisi no, nama, simbol, gambar, dan fungsi.</p>
+        </div>
+    `,
+    2: `
+        <h2>Materi: Gabungan Seri-Paralel</h2>
+        <p>Dalam elektronika, sering kali kita menjumpai rangkaian resistor yang merupakan gabungan dari kombinasi seri dan paralel. Untuk memahami bagaimana menghitung tahanan total dari rangkaian gabungan ini, kita perlu memahami prinsip rangkaian seri dan paralel terlebih dahulu.</p>
+
+        <h3>1. Rangkaian Seri</h3>
+        <p>Dalam rangkaian seri, resistor dihubungkan satu setelah yang lain sehingga arus yang mengalir melalui setiap resistor sama. Tahanan total (R<sub>t</sub>) dari rangkaian seri dapat dihitung dengan menjumlahkan semua resistor:</p>
+        <pre>
+        R<sub>t</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> + ... + R<sub>n</sub>
+        </pre>
+        <p>Contoh: Jika ada tiga resistor dalam rangkaian seri, R1 = 10Ω, R2 = 20Ω, dan R3 = 30Ω, maka:</p>
+        <pre>
+        R<sub>t</sub> = 10Ω + 20Ω + 30Ω = 60Ω
+        </pre>
+
+        <h3>2. Rangkaian Paralel</h3>
+        <p>Dalam rangkaian paralel, resistor dihubungkan sejajar, sehingga tegangan yang melintasi setiap resistor sama. Tahanan total dari rangkaian paralel dihitung menggunakan rumus berikut:</p>
+        <pre>
+        1 / R<sub>t</sub> = (1 / R<sub>1</sub>) + (1 / R<sub>2</sub>) + <br> (1 / R<sub>3</sub>) + ... + (1 / R<sub>n</sub>)
+        </pre>
+        <p>Contoh: Jika ada tiga resistor dalam rangkaian paralel, R1 = 10Ω, R2 = 20Ω, dan R3 = 30Ω, maka:</p>
+        <pre>
+        1 / R<sub>t</sub> = (1 / 10Ω) + (1 / 20Ω) + <br> (1 / 30Ω)
+        R<sub>t</sub> ≈ 5.45Ω
+        </pre>
+
+        <h3>3. Gabungan Seri dan Paralel</h3>
+        <p>Dalam rangkaian gabungan seri-paralel, kita akan menjumpai bagian rangkaian yang tersusun secara seri dan bagian lain yang tersusun secara paralel. Cara menghitung tahanan total adalah dengan mengurai rangkaian tersebut, menghitung tahanan untuk bagian yang paralel terlebih dahulu, kemudian menjumlahkan dengan bagian yang seri.</p>
+
+        <h3>4. Contoh Rangkaian Gabungan Seri-Paralel</h3>
+        <p>Pertimbangkan sebuah rangkaian gabungan dengan tiga resistor, di mana R1 dan R2 disusun secara paralel, dan hasilnya disusun secara seri dengan R3:</p>
+        <pre>
+        R1 = 10Ω, R2 = 20Ω, R3 = 30Ω
+        </pre>
+        <p>Langkah-langkah menghitung tahanan total:</p>
+        <ol>
+            <li>Hitung tahanan dari R1 dan R2 yang tersusun paralel:</li>
+            <pre>
+            1 / R<sub>paralel</sub> = (1 / R<sub>1</sub>) + <br> (1 / R<sub>2</sub>)
+            1 / R<sub>paralel</sub> = (1 / 10Ω) + <br> (1 / 20Ω) = 0.15
+            R<sub>paralel</sub> = 1 / 0.15 = <br> 6.67Ω
+            </pre>
+
+            <li>Tambahkan hasil tahanan paralel dengan R3 yang tersusun seri:</li>
+            <pre>
+            R<sub>t</sub> = R<sub>paralel</sub> + R<sub>3</sub>
+            R<sub>t</sub> = 6.67Ω + 30Ω = 36.67Ω
+            </pre>
+        </ol>
+
+        <h3>5. Contoh Soal</h3>
+        <p>Diberikan rangkaian dengan resistor sebagai berikut:</p>
+        <ul>
+            <li>R1 = 10Ω</li>
+            <li>R2 = 20Ω</li>
+            <li>R3 = 30Ω</li>
+            <li>R4 = 40Ω</li>
+        </ul>
+        <p>R1 dan R2 tersusun paralel, R3 dan R4 tersusun paralel, lalu hasilnya disusun seri. Hitung tahanan total (R<sub>t</sub>), arus total (I) jika tegangan total (Vt) adalah 100V, dan tegangan pada masing-masing resistor.</p>
+
+        <h4>Langkah-langkah Penyelesaian:</h4>
+        <ol>
+            <li>Hitung tahanan dari R1 dan R2 yang tersusun paralel:</li>
+            <pre>
+            1 / R<sub>paralel1</sub> = (1 / 10Ω) + <br> (1 / 20Ω)
+            R<sub>paralel1</sub> ≈ 6.67Ω
+            </pre>
+
+            <li>Hitung tahanan dari R3 dan R4 yang tersusun paralel:</li>
+            <pre>
+            1 / R<sub>paralel2</sub> = (1 / 30Ω) + <br> (1 / 40Ω)
+            R<sub>paralel2</sub> ≈ 17.14Ω
+            </pre>
+
+            <li>Gabungkan hasil tahanan paralel dalam rangkaian seri:</li>
+            <pre>
+            R<sub>t</sub> = R<sub>paralel1</sub> + R<sub>paralel2</sub>
+            R<sub>t</sub> ≈ 6.67Ω + 17.14Ω ≈ 23.81Ω
+            </pre>
+
+            <li>Hitung arus total (I):</li>
+            <pre>
+            I = Vt / Rt = 100V / <br> 23.81Ω ≈ 4.2A
+            </pre>
+
+            <li>Hitung tegangan pada masing-masing bagian:</li>
+            <ul>
+                <li>Tegangan pada R1 dan R2:</li>
+                <pre>
+                V<sub>R1R2</sub> = <br> I * R<sub>paralel1</sub> = 4.2A * 6.67Ω ≈ 28V
+                </pre>
+
+                <li>Tegangan pada R3 dan R4:</li>
+                <pre>
+                V<sub>R3R4</sub> = I * <br> R<sub>paralel2</sub> = 4.2A * 17.14Ω ≈ 72V
+                </pre>
+            </ul>
+        </ol>
+
+        <ul>
+           <h2>FOTO MATERI</h2> 
+           <img src="../assets/image/img-materi/Materi 2 - elektronika/foto-materi.jpg" alt="Dasar Pemrograman" class="materi-image" style="width: 80%; height: auto;">
+         </ul>
+
+        <div class="tugas">
+            <h3>Tugas:</h3>
+            <p>TIDAK ADA TUGAS</p>
+        </div>
+    `
+    };
+
+    content.innerHTML = materiContent[pertemuan];
+}
+
+// Inisialisasi konten untuk pertemuan pertama
+changePertemuan();
+
+    </script>
+</body>
+</html>
