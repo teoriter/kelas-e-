@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header {
+     background-color: #1E1E1E;
+    padding: 1rem;
+    color: white;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    /* Ukuran font lebih besar */
+    background: linear-gradient(45deg, #ff8c00, #ffeb3b);
+    /* Gradient oranye ke kuning */
+    -webkit-background-clip: text;
+    /* Memotong latar belakang untuk teks */
+    -webkit-text-fill-color: transparent;
+    /* Membuat teks transparan */
+}
+
+header p {
+    font-size: 0.8rem;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+.card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    margin: 15px;
+    padding: 25px;
+    width: 280px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+.card h2 {
+    color: #ffffff;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+.btn {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+.btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.back-button-container .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #787878;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: 10px;
+    width: 13%;
+  }
+
+.back-button-container .back-button:hover {
+    background-color: #e4d016;
+    color: brown;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}

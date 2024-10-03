@@ -1,0 +1,298 @@
+ /* Warna latar belakang hitam */
+ body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    /* Warna latar belakang hitam */
+    color: #f5f5f5;
+    /* Warna teks yang lebih terang */
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: #1E1E1E;
+    /* Warna navbar gelap */
+    padding: 1rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    /* Bayangan lebih gelap */
+  }
+
+  .navbar h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    /* Ukuran font lebih besar */
+    background: linear-gradient(45deg, #ff8c00, #ffeb3b);
+    /* Gradient oranye ke kuning */
+    -webkit-background-clip: text;
+    /* Memotong latar belakang untuk teks */
+    -webkit-text-fill-color: transparent;
+    /* Membuat teks transparan */
+  }
+
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .navbar ul li {
+    margin-left: 1.5rem;
+    /* Jarak antar menu */
+  }
+
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    /* Efek transisi pada hover */
+    font-weight: bold;
+    /* Menebalkan font */
+  }
+
+  .navbar ul li a:hover {
+    color: #FFD700;
+    /* Warna saat hover */
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* Body */
+  .content {
+    padding: 2rem;
+    max-width: 900px;
+    /* Maksimal lebar konten */
+    margin: auto;
+    /* Pusatkan konten */
+    background-color: #1E1E1E;
+    /* Warna latar belakang konten */
+    border-radius: 10px;
+    /* Sudut membulat */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* Bayangan lebih gelap */
+  }
+
+  /* Styling untuk foto kelas */
+  .class-photo-container {
+    position: relative;
+    /* Agar lapisan dapat diposisikan di atas foto */
+    margin-bottom: 2rem;
+    /* Jarak bawah foto */
+  }
+
+  .class-photo {
+    width: 100%;
+    /* Lebar foto sesuai kontainer */
+    border-radius: 10px;
+    /* Sudut membulat pada foto */
+    display: block;
+    /* Memastikan foto menjadi block level */
+  }
+
+  .overlay {
+    position: absolute;
+    /* Menempatkan overlay di atas foto */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Warna abu-abu transparan */
+    border-radius: 10px;
+    /* Sudut membulat pada overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Pacifico", system-ui;
+    font-size: 2.5rem;
+    /* Ukuran font untuk teks di overlay */
+    font-weight: bold;
+    /* Menebalkan font */
+  }
+
+  /* Styling untuk jadwal */
+  .schedule,
+  .staff,
+  .students {
+    margin-bottom: 2rem;
+  }
+
+  .schedule h2,
+  .staff h2,
+  .students h2 {
+    color: #ff8c00;
+    /* Warna judul dengan oranye */
+    border-bottom: 3px solid #e9f2f5;
+    /* Garis bawah pada judul */
+    padding-bottom: 0.5rem;
+    /* Ruang bawah judul */
+    font-size: 1.5rem;
+    /* Ukuran font judul */
+  }
+
+  .schedule p,
+  .staff ul,
+  .students ul {
+    margin: 0.5rem 0;
+    /* Ruang atas dan bawah pada paragraf dan daftar */
+    font-size: 1rem;
+    /* Ukuran font yang nyaman dibaca */
+  }
+
+
+
+
+  /* Daftar Card */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    /* Dua baris card */
+    gap: 1.5rem;
+    /* Jarak antar card */
+  }
+
+  .card {
+    background-color: #292929;
+    /* Warna latar belakang card */
+    border: 2px solid #444;
+    /* Border untuk card */
+    border-radius: 8px;
+    /* Sudut membulat */
+    padding: 1.5rem;
+    /* Ruang dalam card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    /* Bayangan lebih gelap */
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    /* Efek transisi */
+    text-align: center;
+    /* Pusatkan teks dalam card */
+    position: relative;
+    /* Untuk efek sebelum */
+    overflow: hidden;
+    /* Menghindari overflow pada efek */
+  }
+
+  .card-img {
+  width: 150px; /* Ukuran gambar 150px */
+  height: 150px; /* Ukuran gambar 150px */
+  object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+  .card h3 {
+    color: #ff8c00;
+    /* Warna judul card dengan oranye */
+    margin: 0.5rem 0;
+    /* Ruang atas dan bawah pada judul card */
+    font-size: 1.2rem;
+    /* Ukuran font judul card */
+  }
+
+  .card p {
+    margin: 0;
+    /* Menghilangkan margin pada paragraf dalam card */
+    color: #f0f0f0;
+    /* Warna teks yang lebih terang */
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    /* Efek angkat saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    /* Bayangan lebih dalam saat hover */
+    border-color: #ff8c00;
+    /* Warna border saat hover */
+  }
+
+
+  /* Responsive styling */
+  @media (max-width: 768px) {
+
+    .navbar ul {
+      display: none;
+      /* Sembunyikan menu pada mobile */
+      flex-direction: column;
+      background-color: #1E1E1E;
+      /* Warna navbar saat mobile */
+      position: absolute;
+      top: 4rem;
+      right: 1rem;
+      width: 200px;
+      /* Lebar menu hamburger */
+      border-radius: 5px;
+      z-index: 1000;
+      /* Pastikan di atas konten */
+    }
+
+    .navbar ul.active {
+      display: flex;
+      /* Tampilkan menu saat aktif */
+    }
+
+    .hamburger {
+      display: block;
+      /* Tampilkan hamburger pada mobile */
+    }
+
+    .overlay {
+      font-size: 1.5em;
+    }
+
+    /* Daftar Card */
+    .card-container {
+      display: flex;
+      /* Menyusun card secara horizontal */
+      overflow-x: auto;
+      /* Mengaktifkan scroll horizontal */
+      padding: 0.5rem;
+      /* Ruang dalam card container */
+      gap: 1rem;
+      /* Jarak antar card */
+      scroll-snap-type: x mandatory;
+      /* Snapping saat scrolling */
+      flex-wrap: nowrap;
+      /* Memastikan card tetap dalam satu baris */
+    }
+
+    .card {
+      background-color: #292929;
+      /* Warna latar belakang card */
+      border: 2px solid #444;
+      /* Border untuk card */
+      border-radius: 8px;
+      /* Sudut membulat */
+      padding: 1rem;
+      /* Ruang dalam card */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      /* Bayangan lebih gelap */
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      /* Efek transisi */
+      text-align: center;
+      /* Pusatkan teks dalam card */
+      width: 150px;
+      /* Lebar card tetap */
+      flex-shrink: 0;
+      /* Mencegah card mengecil */
+    }
+
+    .card:hover {
+transform: translateY(-5px);
+      /* Efek angkat saat hover */
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      /* Bayangan lebih dalam saat hover */
+      border-color: #ff8c00;
+      /* Warna border saat hover */
+    }
+
+  }
