@@ -1,22 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Class E</title>
-   <link rel="stylesheet" href="./style/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelas E - Universitas Dipanegara Makassar</title>
+  <meta http-equiv="refresh" content="2;url=http://class-e.rf.gd/dashboard.html">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #ffffff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .university-logo {
+      width: 100px;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #2d3436;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    .subtitle {
+      color: #636e72;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    .loader {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #f1f2f6;
+      border-top-color: #0984e3;
+      border-radius: 50%;
+      margin: 0 auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <div class="container">
+    <!-- Ganti dengan logo universitas -->
+    <img
+      src="https://1.bp.blogspot.com/-fo5MTxOkNao/YIqVeU-6zkI/AAAAAAAAE2M/ULDAIQsH4VEXo78NZUNqjQvSt5BarCgZgCLcBGAsYHQ/s1600/Logo%2BUniversitas%2BDipa%2BMakassar.png"
+      class="university-logo" alt="Logo Universitas">
+    <h1 class="title">Kelas E</h1>
+    <p class="subtitle">Universitas Dipanegara Makassar</p>
+    <div class="loader"></div>
+  </div>
 
-<div class="welcome-container">
-    <h1>WELCOME TO WEBSITE CLASS E</h1>
-</div>
-
-<script>
+    <script>
     setTimeout(function() {
         window.location.href = 'dashboard.html'; 
     }, 5000);
 </script>
-
 </body>
+
 </html>
